@@ -1,0 +1,25 @@
+.containerFavorite {
+    width : 800px;
+}
+
+.favoriteList {
+    align-items: right;
+    width : 20%;
+}
+
+.favoriteElements {
+    margin-left: 10px; 
+    cursor: pointer; 
+}
+
+
+.deleteFavoriteBtn{
+    background-color: rgb(56, 56, 61);
+    color: white;
+    border: none;
+     border-radius: 5px;
+    padding: 1px 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+

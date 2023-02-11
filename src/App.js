@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import Chart from "./Chart";
+import {useState} from 'react';
+import SearchBar from "./SearchBar";
+import AddFavorite from "./AddFavorite";
+import FavoriteList from "./FavoriteList";
+import "./style.css";
 
 function App() {
+  
+  const [companyName, setCompanyName] = useState("");
+  const [companyFavorite, setCompanyFavorite] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <SearchBar 
+          companyName = {companyName} 
+          setCompanyName = {setCompanyName}
+        />
+        <AddFavorite 
+          companyName = {companyName} 
+          companyFavorite = {companyFavorite} 
+          setCompanyFavorite = {setCompanyFavorite}
+        />
+      </div>
+      <div  className = "containerFavorite">
+        <Chart 
+          companyName = {companyName} 
+        />
+      </div>
+        <div className = "containerFavoriteList">
+          Favorite List
+          <FavoriteList
+            companyName = {companyName} 
+            setCompanyName = {setCompanyName}
+            companyFavorite = {companyFavorite} 
+            setCompanyFavorite = {setCompanyFavorite}
+          />
+        </div>
+
     </div>
-  );
+  )
 }
 
 export default App;
